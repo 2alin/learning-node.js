@@ -13,7 +13,11 @@ const events = require('events'),
       while (boundary !== -1) {
         const input = buffer.substr(0, boundary);
         buffer = buffer.substr(boundary + 1);
-        this.emit('message', JSON.parse(input));
+        try {
+          this.emit('message', JSON.parse(input));
+        } catch {
+          this.emit('print', input);
+        }
         boundary = buffer.indexOf('\n');
       }
     });

@@ -11,6 +11,9 @@ const port = 3000,
     // after a one second delay, send the other chunk
     let timer = setTimeout(() => {
       connection.write('et.txt","timestamp": 1556683521891}' + '\n');
+      // test incorrect json string;
+      connection.write('this is not a json string' + '\n');
+
       connection.end();
     }, 1000);
 

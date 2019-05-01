@@ -19,3 +19,7 @@ ldjClient.on('message', message => {
       throw Error(`Unrecognized message type: ${message.type}`);
   }
 });
+
+ldjClient.on('print', string => {
+  console.log(string);
+});
