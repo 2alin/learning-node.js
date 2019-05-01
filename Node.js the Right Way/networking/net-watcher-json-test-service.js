@@ -6,7 +6,7 @@ const port = 3000,
     console.log('Subscriber connected');
 
     // send the first chunk inmediately
-    connection.write('{"type":"changed","file":"targ}');
+    connection.write('{"type":"changed","file":"targ');
 
     // after a one second delay, send the other chunk
     let timer = setTimeout(() => {
